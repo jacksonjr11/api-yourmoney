@@ -21,7 +21,7 @@ import { AccountModule } from './modules/account/account.module';
       autoLoadEntities: true,
       logging: 'all',
       extra: {
-        ssl: false,
+        ssl: true,
       },
     }),
     AccountModule,
