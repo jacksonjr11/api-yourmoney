@@ -20,9 +20,9 @@ import { AccountModule } from './modules/account/account.module';
       synchronize: false,
       autoLoadEntities: true,
       logging: 'all',
-      // extra: {
-      //   ssl: true,
-      // },
+      extra: {
+        ssl: false,
+      },
     }),
     AccountModule,
   ],
