@@ -5,9 +5,7 @@ import { AccountController } from './account.controller';
 import { AccountService } from './account.service';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([PersonEntity], 'yourmoney'),
-  ],
+  imports: [TypeOrmModule.forFeature([PersonEntity], 'd5ttchep2fs765')],
   controllers: [AccountController],
   providers: [AccountService],
 })

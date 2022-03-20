@@ -9,21 +9,22 @@ import { AccountModule } from './modules/account/account.module';
   imports: [
     ConfigModule.forRoot(),
     TypeOrmModule.forRoot({
-      name: 'yourmoney',
+      name: 'd5ttchep2fs765',
       type: 'postgres',
       host: process.env.DB_HOST,
       port: Number(process.env.DB_PORT),
       username: process.env.DB_USER,
       password: process.env.DB_PASS,
       database: process.env.DB_DATABASE,
-      entities: [
-          __dirname + '/core/entity/*.entity{.ts,.js}',
-      ],
+      entities: [__dirname + '/core/entity/*.entity{.ts,.js}'],
       synchronize: false,
       autoLoadEntities: true,
-      logging: 'all'
+      logging: 'all',
+      extra: {
+        ssl: true,
+      },
     }),
-    AccountModule
+    AccountModule,
   ],
   controllers: [AppController],
   providers: [AppService],

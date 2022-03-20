@@ -13,7 +13,7 @@ import {
 @Injectable()
 export class AccountService {
   constructor(
-    @InjectRepository(PersonEntity, 'yourmoney')
+    @InjectRepository(PersonEntity, 'd5ttchep2fs765')
     private readonly personRepository: Repository<PersonEntity>,
   ) {}
 
@@ -69,7 +69,15 @@ export class AccountService {
       name: data.name,
       email: data.email,
       password: md5(data.password),
+      created_at: new Date(),
     });
+
+    if (!accountResult) {
+      throw new HttpException(
+        { message: 'Erro desconhecido, conta não criada' },
+        HttpStatus.BAD_REQUEST,
+      );
+    }
 
     return {
       message: 'Account created with success',

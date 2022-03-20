@@ -14,9 +14,6 @@ export class PersonEntity {
   @Column()
   email: string;
 
-  // @Column()
-  // income_id: string;
-
-  // @Column()
-  // expense_id: string;
+  @Column()
+  created_at: Date;
 }
