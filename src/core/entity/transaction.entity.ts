@@ -1,7 +1,8 @@
-import { Column, Entity, PrimaryGeneratedColumn } from 'typeorm';
+import { Column, Entity, ManyToOne, PrimaryGeneratedColumn } from 'typeorm';
+import { PersonEntity } from './person.entity';
 
 @Entity({ schema: 'public', name: 'transaction' })
-export class PersonEntity {
+export class TransactionEntity {
   @PrimaryGeneratedColumn()
   id: number;
 
@@ -19,4 +20,7 @@ export class PersonEntity {
 
   @Column()
   created_at: string;
+
+  @ManyToOne(() => PersonEntity, (person) => person.id)
+  student: PersonEntity;
 }
